@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/29 15:55:47 by molamham          #+#    #+#             */
-/*   Updated: 2025/12/29 17:37:21 by molamham         ###   ########.fr       */
+/*   Updated: 2025/12/30 21:57:02 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Fixed
         Fixed(); // Default constructor
         Fixed(const Fixed &src); // Copy constructor
         Fixed &operator=(const Fixed &src); // Copy assignment constructor
-        ~Fixed(){}; // Destructor
+        ~Fixed(); // Destructor
         int getRawBits(void) const;
         void setRawBits(int const raw);
 };
