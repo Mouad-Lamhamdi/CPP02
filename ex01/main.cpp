@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mouad <mouad@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/31 10:29:22 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/01 19:14:06 by molamham         ###   ########.fr       */
+/*   Updated: 2026/01/04 15:28:05 by mouad            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int main()
     Fixed const b(42.44f);
     std::cout << b.getRawBits() << std::endl;
     std::cout << b.toFloat() << std::endl;
+    std::cout << b.toInt() << std::endl;
     return 0;
 }
