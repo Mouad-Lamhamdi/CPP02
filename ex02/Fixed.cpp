@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 09:57:08 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/08 15:19:33 by molamham         ###   ########.fr       */
+/*   Created: 2026/01/08 15:42:39 by molamham          #+#    #+#             */
+/*   Updated: 2026/01/08 18:56:15 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,58 @@ std::ostream& operator<<(std::ostream& out, Fixed const& f)
 {
     out << f.toFloat();
     return out;
+}
+
+bool Fixed::operator>(const Fixed& other) const{
+    return this->_fixedPointValue > other._fixedPointValue;
+}
+
+bool Fixed::operator<(const Fixed& other) const{
+    return this->_fixedPointValue < other._fixedPointValue;
+}
+
+bool Fixed::operator>=(const Fixed& other) const{
+    return this->_fixedPointValue >= other._fixedPointValue;
+}
+
+bool Fixed::operator<=(const Fixed& other) const{
+    return this->_fixedPointValue <= other._fixedPointValue;
+}
+
+bool Fixed::operator==(const Fixed& other) const{
+    return this->_fixedPointValue == other._fixedPointValue;
+}
+
+bool Fixed::operator!=(const Fixed& other) const{
+    return this->_fixedPointValue != other._fixedPointValue;
+}
+
+Fixed Fixed::operator+(const Fixed& other) const{
+    Fixed result;
+
+    result.setRawBits(this->_fixedPointValue + other._fixedPointValue);
+    return result;
+}
+
+Fixed Fixed::operator-(const Fixed& other) const{
+    Fixed result;
+    
+    result.setRawBits(this->_fixedPointValue - other._fixedPointValue);
+    return result;
+}
+
+Fixed Fixed::operator*(const Fixed& other) const{
+    Fixed result;
+
+    result.setRawBits((this->_fixedPointValue * other._fixedPointValue) >> _fractionalBits);
+    return result;
+} // raw1 = a x 256; raw2 = b x 256; raw1 * raw2 = a x b x 256² so we shift back to x256
+
+
+
+Fixed Fixed::operator/(const Fixed& other) const{
+    Fixed result;
+
+    result.setRawBits((this->_fixedPointValue << _fractionalBits) / other._fixedPointValue);
+    return result;
 }

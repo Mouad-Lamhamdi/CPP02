@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/31 09:52:19 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/08 15:18:23 by molamham         ###   ########.fr       */
+/*   Created: 2026/01/08 15:42:07 by molamham          #+#    #+#             */
+/*   Updated: 2026/01/08 18:55:49 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,19 @@ class Fixed{
 
         int getRawBits() const;
         void setRawBits(int const raw);
+
+        //comparison operators
+        bool operator>(const Fixed& other) const;
+        bool operator<(const Fixed& other) const;
+        bool operator>=(const Fixed& other) const;
+        bool operator<=(const Fixed& other) const;
+        bool operator==(const Fixed& other) const;
+        bool operator!=(const Fixed& other) const;
+        
+        Fixed operator+(const Fixed& other) const;
+        Fixed operator-(const Fixed& other) const;
+        Fixed operator*(const Fixed& other) const;
+        Fixed operator/(const Fixed& other) const;
 };
 
 std::ostream& operator<<(std::ostream& out, Fixed const& f);
