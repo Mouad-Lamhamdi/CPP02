@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:42:39 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/08 18:56:15 by molamham         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:56:44 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,4 +133,30 @@ Fixed Fixed::operator/(const Fixed& other) const{
 
     result.setRawBits((this->_fixedPointValue << _fractionalBits) / other._fixedPointValue);
     return result;
+}
+
+// pre-increment
+Fixed& Fixed::operator++(){
+    _fixedPointValue += 1;
+    return *this;
+}
+
+// post-increment
+Fixed Fixed::operator++(int){
+    Fixed tmp(*this);
+    _fixedPointValue += 1;
+    return tmp;
+}
+
+// pre-decrement
+Fixed& Fixed::operator--(){
+    _fixedPointValue -= 1;
+    return *this;
+}
+
+// post-decrement
+Fixed Fixed::operator--(int){
+    Fixed tmp(*this);
+    _fixedPointValue -= 1;
+    return tmp;
 }

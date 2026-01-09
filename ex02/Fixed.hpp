@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:42:07 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/08 18:55:49 by molamham         ###   ########.fr       */
+/*   Updated: 2026/01/09 22:46:49 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ class Fixed{
         Fixed operator-(const Fixed& other) const;
         Fixed operator*(const Fixed& other) const;
         Fixed operator/(const Fixed& other) const;
+
+        Fixed& operator++();
+        Fixed operator++(int);
+        Fixed& operator--();
+        Fixed operator--(int);
 };
 
 std::ostream& operator<<(std::ostream& out, Fixed const& f);
