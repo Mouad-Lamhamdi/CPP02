@@ -6,7 +6,7 @@
 /*   By: molamham <molamham@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/08 15:42:39 by molamham          #+#    #+#             */
-/*   Updated: 2026/01/09 22:56:44 by molamham         ###   ########.fr       */
+/*   Updated: 2026/01/11 15:10:40 by molamham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,4 +159,21 @@ Fixed Fixed::operator--(int){
     Fixed tmp(*this);
     _fixedPointValue -= 1;
     return tmp;
+}
+
+//min-max
+Fixed& Fixed::min(Fixed& a, Fixed& b){
+    return (a < b) ? a : b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b){
+    return (a < b) ? a : b;
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b){
+    return (a > b) ? a : b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b){
+    return (a > b) ? a : b;
 }
